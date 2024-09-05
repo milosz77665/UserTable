@@ -1,4 +1,8 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
+import RootLayout from "./pages/RootLayout";
+import Home, { userDataLoader } from "./pages/Home";
+import Error from "./pages/Error";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -21,10 +25,19 @@ body{
 `;
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      errorElement: <Error />,
+      children: [{ index: true, element: <Home />, loader: userDataLoader }],
+    },
+  ]);
+
   return (
     <>
       <GlobalStyle />
-      <>Home</>
+      <RouterProvider router={router} />
     </>
   );
 };
