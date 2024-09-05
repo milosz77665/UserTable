@@ -1,10 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-const StyledTableHead = styled.thead``;
-
-const StyledTableRow = styled.tr``;
-
 const StyledTableHeader = styled.th`
   text-align: start;
   padding: 15px;
@@ -27,13 +23,13 @@ interface TableHeadRowProps {
 
 const TableHeadRow: FC<TableHeadRowProps> = ({ columnNames }) => {
   return (
-    <StyledTableHead>
-      <StyledTableRow>
+    <thead>
+      <tr>
         {columnNames.map((columnName) => (
           <StyledTableHeader key={columnName}>{columnName}</StyledTableHeader>
         ))}
-      </StyledTableRow>
-    </StyledTableHead>
+      </tr>
+    </thead>
   );
 };
 

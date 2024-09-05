@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 
-const StyledTableBody = styled.tbody``;
-
 const StyledTableData = styled.td`
   font-weight: 300;
   padding: 10px;
@@ -41,7 +39,7 @@ interface TableBodyProps<T extends { id: number }> {
 
 const TableBody = <T extends { id: number }>({ data, keyNames }: TableBodyProps<T>) => {
   return (
-    <StyledTableBody>
+    <tbody>
       {data.map((item) => (
         <StyledTableRow key={item.id}>
           {keyNames.map((keyName) => (
@@ -49,7 +47,7 @@ const TableBody = <T extends { id: number }>({ data, keyNames }: TableBodyProps<
           ))}
         </StyledTableRow>
       ))}
-    </StyledTableBody>
+    </tbody>
   );
 };
 
