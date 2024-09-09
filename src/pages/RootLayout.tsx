@@ -2,8 +2,7 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 const LayoutContainer = styled.div`
-  height: fit-content;
-  min-height: 100vh;
+  height: 100vh;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,7 @@ const OutletContainer = styled.main`
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const StyledH1 = styled.h1`
