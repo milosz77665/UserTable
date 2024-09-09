@@ -54,6 +54,9 @@ const StyledTableRow = styled.tr`
 
 const TableInfoData = styled.td`
   font-weight: 300;
+  width: 100%;
+  table-layout: fixed;
+  display: table;
   padding-top: 100px;
   text-align: center;
   color: #eddede;
