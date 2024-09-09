@@ -3,8 +3,13 @@ import TableHeadRow from "./TableHeadRow";
 import TableBody from "./TableBody";
 
 const StyledTable = styled.table`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-collapse: separate;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+  word-break: break-all;
 `;
 
 interface TableProps<T extends { id: number }> {
