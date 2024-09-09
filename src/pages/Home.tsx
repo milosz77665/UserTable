@@ -19,6 +19,10 @@ const HomeContainer = styled.div`
   max-width: 1500px;
 `;
 
+const HomeLoadingSpinner = styled(LoadingSpinner)`
+  margin-top: 100px;
+`;
+
 const Home = () => {
   const { userData } = useLoaderData() as { userData: User[] };
   const dispatch = useDispatch();
@@ -27,7 +31,7 @@ const Home = () => {
   const columnNames = ["Name", "Username", "E-mail", "Phone"];
 
   return (
-    <Suspense fallback={<LoadingSpinner size={80} />}>
+    <Suspense fallback={<HomeLoadingSpinner size={80} />}>
       <Await resolve={userData} errorElement={<ErrorInfo>Could not fetch user data</ErrorInfo>}>
         {(loadedUserData: User[]) => {
           useEffect(() => {

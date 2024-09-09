@@ -16,12 +16,13 @@ const StyledSpinnerIcon = styled(SpinnerIcon)`
 `;
 
 interface LoadingSpinnerProps {
+  className?: string;
   size?: number;
   color?: string;
 }
 
-const LoadingSpinner: FC<LoadingSpinnerProps> = ({ size, color }) => {
-  return <StyledSpinnerIcon size={size} color={color} />;
+const LoadingSpinner: FC<LoadingSpinnerProps> = ({ className, size, color }) => {
+  return <StyledSpinnerIcon className={className} size={size} color={color} />;
 };
 
 export default LoadingSpinner;
